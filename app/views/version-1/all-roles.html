@@ -1,0 +1,326 @@
+{% extends "layouts/main.html" %}
+
+{% set username = "Jane Doe" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {%- from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher -%}
+
+  {{ mojOrganisationSwitcher({
+    text: 'HMP Sheppey Cluster (Swaleside)',
+    link: {
+      text: 'Change prison',
+      href: '#'
+    }
+  }) }}
+
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Manage user accounts",
+        href: "#"
+      },
+      {
+        text: "Search for a DPS user",
+        href: "#"
+      },
+      {
+          text: "[User name]"
+        }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <form action="check-your-answers" method="post" class="form">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="all-roles-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Select roles for Jane Doe
+                  </h1>
+                </legend>
+                <div id="all-roles-hint" class="govuk-hint">
+                  Select all that apply
+                </div>
+                <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-activity-hub" name="all-roles" type="checkbox" value="Activity hub" {{ checked("all-roles", "Activity hub") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-activity-hub">
+                      Activity hub
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Gives the ability to ATTEND ALL prisoners for activities. Should only be added with Activities Hub Manager approval.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-allocations-homd" name="all-roles" type="checkbox" value="Allocations - HOMD" {{ checked("all-roles", "Allocations - HOMD") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-allocations-homd">
+                      Allocations - HOMD
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows allocation and managament of Prisoner Offender Management in Custody (OMiC).This role is only for HOMD and Case Admins.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-allocations-pom" name="all-roles" type="checkbox" value="Allocations - POM" {{ checked("all-roles", "Allocations - POM") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-allocations-pom">
+                      Allocations - POM
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows allocation and management of Prison Offender Managers (POMs) for Offender Management in Custody (OMiC). This role is only for HOMDs and Case Admins.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-bulk-appointments" name="all-roles" type="checkbox" value="Bulk appointments" {{ checked("all-roles", "Bulk appointments") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-bulk-appointments">
+                      Bulk appointments
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows prison and probation POMs to view their own offender caseload and progress COM handovers where applicable. For POMs
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-categorisation-approval" name="all-roles" type="checkbox" value="Categorisation approval" {{ checked("all-roles", "Categorisation approval") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-categorisation-approval">
+                      Catergorisation approval
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows the user to approve or reject a security categorisation. This role is only for Heads & Deputy Heads of OMU or Security.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-categorisation-create-intial" name="all-roles" type="checkbox" value="Categorisation create intial" {{ checked("all-roles", "Categorisation create inital") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-categorisation-create-intial">
+                      Categorisation create inital
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows a user to create an initial security categorisation for an offender (EG in a remand prison). Not required in non-remand prisons.For any staff carrying out initial categorisation assessments.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-categorisation-create-re-cat" name="all-roles" type="checkbox" value="Categorisation create re-cat" {{ checked("all-roles", "Categorisation create re-cat") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-categorisation-create-intial">
+                      Categorisation create re-cat
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows a user to create an initial security categorisation for an offender (EG in a remand prison). Not required in non-remand prisons.For any staff carrying out initial categorisation assessments.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-categorisation-security-dept" name="all-roles" type="checkbox" value="Categorisation security dept" {{ checked("all-roles", "Category security dept") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-categorisation-security-dept">
+                        Categorisation security dept
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        This role is for Security Dept Analysts to provide additional security information. For Security Department users only.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-complete-cell-move" name="all-roles" type="checkbox" value="Complete cell move" {{ checked("all-roles", "Complete cell move") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-complete-cell-move">
+                      Complete cell move
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Complete a cell move and view the 7 day history of all cell moves completed in your establishment. For Officers and any other staff carrying out internal cell moves of prisoners.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-delete-prisoners-appointment" name="all-roles" type="checkbox" value="Delete prisoners appointment" {{ checked("all-roles", "Delete prisoners appointment") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-delete-prisoners-appointment">
+                      Delete prisoner's appointment
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Gives the user the ability to delete an offenders appointment. For Activity Hub staff.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-global-search" name="all-roles" type="checkbox" value="Global search" {{ checked("all-roles", "Global search") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-global-search">
+                      Global search
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows searching for prisoners outside of the user's caseload, similar to Global Name Search. For any staff that need to find the location of prisoners outside of their own caseload.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-iep-maintenance" name="all-roles" type="checkbox" value="IEP maintenance" {{ checked("all-roles", "IEP maintenance") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-iep-maintenance">
+                      IEP maintenance
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows the user to change a prisoner's Incentive level. Anyone who had this access in NOMIS will have had it mapped over to DPS automatically. For any users that carry out IEP reviews and changes.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-key-worker-management" name="all-roles" type="checkbox" value="Key worker management" {{ checked("all-roles", "Key worker management") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-key-worker-management">
+                      Key worker management
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows Key Worker allocation, maintenance of Key Workers and viewing of Key Worker stats. For B5 managers and above and any identified admin support.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-keyworker-read-only" name="all-roles" type="checkbox" value="Keyworker read only" {{ checked("all-roles", "Key worker read only") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-keyworker-read-only">
+                      Key worker read only
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Gives a read only view to Key Worker allocation and Key Worker stats.Any users that require Read Only access to Key Worker stats.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-licences-case-admin" name="all-roles" type="checkbox" value="Licences case admin" {{ checked("all-roles", "Licences case admin") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-licences-case-admin">
+                      Licences case admin
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Enables the user to access HDC and Licences service to complete eligibility checks, send application to COM and generate the licence once approved. For Case Admin users within prisons.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-licences-read-only" name="all-roles" type="checkbox" value="Licences read only" {{ checked("all-roles", "Licences read only") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-licences-read-only">
+                      Licences read only
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows Read Only access to the Digital HDC service.For staff in a Prison that are not a Case Admin or Decision Maker but need to access the HDC service.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-manage-prisoner-visits" name="all-roles" type="checkbox" value="Manage prisoner visits" {{ checked("all-roles", "Manage prisoner visits") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-manage-prisoner-visits">
+                      Manage prisoner visit requests
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        For Prison Visits Booking staff to review, accept or decline social visits requests made by social visitors within the PVB service.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-pecs-oca-officer" name="all-roles" type="checkbox" value="PECS OCA officer" {{ checked("all-roles", "PECS OCA officer") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-pecs-oca-officer">
+                      PECS OCA officer
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows OCA staff to view or make an Inter Prison Transfer request to PMU. For OCA users within Prisons.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-pecs-prison" name="all-roles" type="checkbox" value="PECS prison" {{ checked("all-roles", "PECS prison") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-pecs-prison">
+                      PECS prison
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows users to book or view moves that are carried out by PEC's. Any user who needs to arrange or view the transfer of an offender.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-pecs-person-escort-record-author" name="all-roles" type="checkbox" value="PECS person escort record-author" {{ checked("all-roles", "PECS person escort author") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-pecs-person-escort-record-author">
+                     PECS person escort record author
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows users to create, view and edit Digital PER's. For any users who need to complete a PER.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-pom-user" name="all-roles" type="checkbox" value="POM user" {{ checked("all-roles", "POM user") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-pom-user">
+                      POM user
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows users to create and view OMiC sensitive case notes within DPS & download documents held against a prisoner in nDelius. For Prison Offender Managers. Should only be added with Heads or Deputy Heads of OMU approval.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-released-pisoner-viewing" name="all-roles" type="checkbox" value="Released pisoner viewing" {{ checked("all-roles", "Released prisoner viewing") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-released-pisoner-viewing">
+                      Released prisoner viewing
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Works with Global Search to allow the user to view the full prisoner profile, including Case Notes, for released prisoners. Should only be added with Line Manager approval.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-restricted-patient-removal" name="all-roles" type="checkbox" value="Restricted patient removal" {{ checked("all-roles", "Restricted patient removal") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-restricted-patient-removal">
+                      Restricted patient removal
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows a user to remove someone as a restricted patient if they have been released from a hospital to the community. Intended users are OMU hub managers and MHCS staff.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-restricted-patient-transfer" name="all-roles" type="checkbox" value="Restricted patient transfer" {{ checked("all-roles", "Restricted patient transfer") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-restricted-patient-transfer">
+                      Restricted patient transfer
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows the release a prisoner to a secure hospital where they being detained under the mental health act. Intended users are Reception staff and OMU hub managers.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-send-legal-mail-scan-barcode" name="all-roles" type="checkbox" value="Send legal mail - scan barcode" {{ checked("all-roles", "Send legal mail - scan barcode") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-send-legal-mail-scan-barcode">
+                      Send legal mail - scan barcode
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        This role is intended for mailroom staff to enable them to scan Rule 39 or confidential access mail received by the prison, with a barcode to confirm it's from a legitimate sender.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-update-alert" name="all-roles" type="checkbox" value="Update alert" {{ checked("all-roles", "Update alert") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-update-alert">
+                      Update alert
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Allows the user to add and close alerts on Offenders records. For users who need to update or create alerts.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-use-of-force-coordinator" name="all-roles" type="checkbox" value="Use of force-coordinator" {{ checked("all-roles", "Use of force coordinator") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-use-of-force-coordinator">
+                      Use of force coordinator
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Full editing rights of reports and statements created by other members of staff. Should only be added with UoF SMT Lead or Dep Gov approval.
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ar-use-of-force-reviewer" name="all-roles" type="checkbox" value="Use of force reviewer" {{ checked("all-roles", "Use of force reviewer") }} aria-describedby="all-roles-item-hint">
+                    <label class="govuk-label govuk-checkboxes__label" for="ar-use-of-force-reviewer">
+                      Use of force reviewer
+                    </label>
+                    <div id="all-roles-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                        Read only view of reports and statements created by other members of staff. Should only be added with UoF SMT Lead or Dep Gov approval.
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+    
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+    
+          </form>
+    </div>
+</div>
+
+{% endblock %}

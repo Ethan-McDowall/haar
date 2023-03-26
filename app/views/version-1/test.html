@@ -1,0 +1,805 @@
+<!-- tempaltes -->
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    {% if "activity-hub-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Activity hub
+            </dt>
+            <dd class="govuk-summary-list__value">
+                
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden">role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "allocations-homd-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Allocations - HOMD
+            </dt>
+            <dd class="govuk-summary-list__value">
+                
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "allocations-pom-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Allocations - POM
+            </dt>
+            <dd class="govuk-summary-list__value">
+                
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "bulk-appointments-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Bulk appointments
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "categorisation-approval-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Categorisation approval
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "categorisation-create-intial-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Categorisation create initial
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+    </div>
+    {% endif %}
+    {% if "categorisation-re-cat-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Categorisation re-cat
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "categorisation-security-dept-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Categorisation security dept
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "complete-cell-move-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Complete cell move
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "delete-prisoners-appointment-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Delete prisoner's appointment
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "global-search-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Global search
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "iep-maintenance-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                IEP maintenance
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "key-worker-management-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Key worker management
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "key-worker-read-only-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Key worker read only
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+        {% if "licences-case-admin-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Lincences case admin
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "licences-read-only-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Licences read only
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "manage-prison-visit-requests-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Manage prison visit requests
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "pecs-oca-officer-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                PECS OCA officer
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "pecs-prison-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                PECS prison
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "pecs-person-escort-record-author-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                PECS person escort record author
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "pom-user-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                POM user
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "released-prisoner-viewing-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Released prisoner viewing
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "restricted-patient-removal-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Retricted patient removal
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "restricted-patient-transfer-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Restricted patient transfer
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "send-legal-mail-scan-barcode-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Send legal mail - scan barcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "update-alert-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Update alert
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "use-of-force-coordinator-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Use of force coordinator
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "use-of-force-reviewer-all-roles" in data['select-all-roles'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Use of force reviewer
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+  </dl>
+
+  <form action="/form-handler" method="post" novalidate>
+    <input type="hidden" name="answers-checked" value="true">
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+  </form>
+
+</section>
+<!-- all roles -->
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">          
+    {% if "activity-hub-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Activity hub
+            </dt>
+            <dd class="govuk-summary-list__value">
+                
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden">role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "allocations-homd-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Allocations - HOMD
+            </dt>
+            <dd class="govuk-summary-list__value">
+                
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "allocations-pom-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Allocations - POM
+            </dt>
+            <dd class="govuk-summary-list__value">
+                
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "bulk-appointments-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Bulk appointments
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "categorisation-approval-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Categorisation approval
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "categorisation-create-intial-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Categorisation create initial
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "categorisation-re-cat-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Categorisation re-cat
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "categorisation-security-dept-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Categorisation security dept
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "complete-cell-move-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Complete cell move
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "delete-prisoners-appointment-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Delete prisoner's appointment
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "global-search-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Global search
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "iep-maintenance-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                IEP maintenance
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "key-worker-management-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Key worker management
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "key-worker-read-only-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Key worker read only
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "licences-case-admin-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Lincences case admin
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "licences-read-only-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Licences read only
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "manage-prison-visit-requests-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Manage prison visit requests
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "pecs-oca-officer-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                PECS OCA officer
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "pecs-prison-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                PECS prison
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "pecs-person-escort-record-author-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                PECS person escort record author
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "pom-user-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                POM user
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "released-prisoner-viewing-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Released prisoner viewing
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "restricted-patient-removal-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Retricted patient removal
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "restricted-patient-transfer-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Restricted patient transfer
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "send-legal-mail-scan-barcode-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Send legal mail - scan barcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "update-alert-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Update alert
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "use-of-force-coordinator-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Use of force coordinator
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+    {% if "use-of-force-reviewer-template" in data['select-template'] %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                Use of force reviewer
+            </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+            </dd>
+        </div>
+    {% endif %}
+</dl>

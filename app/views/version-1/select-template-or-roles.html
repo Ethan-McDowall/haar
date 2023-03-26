@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% set username = "Jane Doe" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {%- from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher -%}
+
+  {{ mojOrganisationSwitcher({
+    text: 'HMP Sheppey Cluster (Swaleside)',
+    link: {
+      text: 'Change prison',
+      href: '#'
+    }
+  }) }}
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Manage user accounts</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Search for a DPS user</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="./staff-profile">{{ username }}</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="./job-title">Enter {{ username }}'s job title</a>
+      </li>
+    </ol>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="/template-or-role" method="post">
+
+            {{ govukRadios({
+            name: "select-a-template-or-from-all-roles",
+            fieldset: {
+                legend: {
+                text: "Select a template or from all roles",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "You can start with a template or go straight to a list of all DPS roles."
+            },
+            items: [
+                {
+                value: "omu-case-administrator",
+                text: "OMU case administrator"
+                },
+                {
+                value: "omu-manager",
+                text: "OMU manager"
+                },
+                {
+                value: "omu-prison-offender-manager",
+                text: "OMU prison offender manager"
+                },
+                {
+                value: "reception-officer",
+                text: "Reception officer"
+                },
+                {
+                value: "security-administrator",
+                text: "Security administrator"
+                },
+                {
+                value: "security-manager",
+                text: "Security manager"
+                },
+                {
+                value: "wing-officer",
+                text: "Wing officer"
+                },
+                {
+                divider: "or"
+                },
+                {
+                value: "list-of-all-dps-roles",
+                text: "List of all DPS roles"
+                }
+            ]
+            }) }}
+            
+            {{ govukButton({
+                text: "Continue"
+            }) }}
+        </form>
+    </div>
+</div>
+
+{% endblock %}

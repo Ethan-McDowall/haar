@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% set username = "Jane Doe" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {%- from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher -%}
+
+  {{ mojOrganisationSwitcher({
+    text: 'HMP Sheppey Cluster (Swaleside)',
+    link: {
+      text: 'Change prison',
+      href: '#'
+    }
+  }) }}
+
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Manage user accounts</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Search for a DPS user</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="./staff-profile">{{ username }}</a>
+      </li>
+    </ol>
+  </div>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="./select-template-or-roles" method="post" class="form">
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="job-title">
+                    Enter {{ username }}'s job title?
+                  </label>
+                </h1>
+                <input class="govuk-input" id="job-title" name="job-title" type="text"> 
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

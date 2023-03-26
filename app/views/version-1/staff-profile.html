@@ -1,0 +1,239 @@
+{% extends "layouts/main.html" %}
+
+{% set username = "Jane Doe" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {%- from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher -%}
+
+  {{ mojOrganisationSwitcher({
+    text: 'HMP Sheppey Cluster (Swaleside)',
+    link: {
+      text: 'Change prison',
+      href: '#'
+    }
+  }) }}
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Manage user accounts</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Search for a DPS user</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">{{ username }}</a>
+      </li>
+    </ol>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">{{ username }}</h1>
+    {{govukTag({
+      text: "Active account",
+      classes: "govuk-tag--green govuk-!-margin-bottom-6"
+    })}}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Account details</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+          Username
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jane Doe
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jane.Doe@justice.gov.uk
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+          Verified
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+          Job title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['job-title'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Remove<span class="govuk-visually-hidden"> role</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Roles</h2>
+    {% if "omu-case-administrator" in data['select-a-template-or-from-all-roles'] %}
+      {% for roles in data['all-roles'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+              {{ roles }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+              </a>
+            </dd>
+        </div>
+      </dl>
+      {% endfor %}
+    {% endif %}
+    {% if "omu-manager" in data['select-a-template-or-from-all-roles'] %}
+      {% for omuCaseAdmin in data['omu-case-administrators-template'] %}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+            {{ omuCaseAdmin }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Remove<span class="govuk-visually-hidden"> role</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      {% endfor %}
+    {% endif %}
+    {% if "omu-prison-offender-manager" in data['select-a-template-or-from-all-roles'] %}
+      {% for omuCaseManager in data['omu-case-manager-template'] %}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+            {{ omuCaseManager }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Remove<span class="govuk-visually-hidden"> role</span>
+            </a>
+          </dd>
+        </div>       
+      </dl>
+      {% endfor %}
+    {% endif %}
+    {% if "reception-officer" in data['select-a-template-or-from-all-roles'] %}
+      {% for receptionOfficer in data['reception-officer-template'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+              {{ receptionOfficer }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      {% endfor %}
+    {% endif %}
+    {% if "security-administrator" in data['select-a-template-or-from-all-roles'] %}
+      {% for securityAdministrator in data['security-administrator-template'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+              {{ securityAdministrator }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Remove<span class="govuk-visually-hidden"> role</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      {% endfor %}
+    {% endif %}
+    {% if "security-manager" in data['select-a-template-or-from-all-roles'] %}
+      {% for securityManager in data['security-manager-template'] %}
+      <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+            {{ securityManager }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Remove<span class="govuk-visually-hidden"> role</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      {% endfor %}
+    {% endif %}
+    {% if "wing-officer" in data['select-a-template-or-from-all-roles'] %}
+      {% for wingOfficer in data['wing-officer-template'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                {{ wingOfficer }}
+              </dt>
+              <dd class="govuk-summary-list__value">
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Remove<span class="govuk-visually-hidden"> role</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+      {% endfor %}
+  {% endif %}   
+  {% if not "wing-officer" in data['select-a-template-or-from-all-roles'] %}
+    <p class="govuk-body">No DPS roles</p>
+  {% endif %}
+
+  {{ govukButton({
+    text: "Manage roles",
+    href:"job-title.html"
+  }) }}
+
+  </div>
+</div>
+
+{% endblock %}

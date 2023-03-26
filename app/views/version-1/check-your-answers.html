@@ -1,0 +1,205 @@
+{% extends "layouts/main.html" %}
+
+{% set username = "Jane Doe" %}
+
+{% set omuCaseAdministrators = "omu-case-administrators" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {%- from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher -%}
+
+  {{ mojOrganisationSwitcher({
+    text: 'HMP Sheppey Cluster (Swaleside)',
+    link: {
+      text: 'Change prison',
+      href: '#'
+    }
+  }) }}
+
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Manage user accounts",
+        href: "#"
+      },
+      {
+        text: "Search for a DPS user",
+        href: "#"
+      },
+      {
+          text: "[User name]"
+        }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Check changes to {{ username }}</h1>
+
+        <!-- dynamic roles added content-->
+        
+        <section id="roles-added">
+            <h2 class="govuk-heading-m">Roles added</h2>
+            <!-- 
+            {% for roles in data['all-roles'] %}
+                <li>{{ roles }}</li>
+            {% else %}
+                <li>No roles selected</li>
+            {% endfor %}  
+            -->    
+            
+            
+            <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+                {% for roles in data['all-roles'] %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                    {{ roles }}
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Remove<span class="govuk-visually-hidden"> role</span>
+                    </a>
+                  </dd>
+                </div>
+                {% endfor %}
+                {% for omuCaseAdmin in data['omu-case-administrators-template'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                      {{ omuCaseAdmin }}
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+    
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Remove<span class="govuk-visually-hidden"> role</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endfor %}
+                {% for omuCaseManager in data['omu-case-manager-template'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                      {{ omuCaseManager }}
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+    
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Remove<span class="govuk-visually-hidden"> role</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endfor %}
+                {% for receptionOfficer in data['reception-officer-template'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                      {{ receptionOfficer }}
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+    
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Remove<span class="govuk-visually-hidden"> role</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endfor %}
+                {% for securityAdministrator in data['security-administrator-template'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                      {{ securityAdministrator }}
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+    
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Remove<span class="govuk-visually-hidden"> role</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endfor %}
+                {% for securityManager in data['security-manager-template'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                      {{ securityManager }}
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+    
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Remove<span class="govuk-visually-hidden"> role</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endfor %}
+                {% for wingOfficer in data['wing-officer-template'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds govuk-!-font-weight-regular">
+                      {{ wingOfficer }}
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+    
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Remove<span class="govuk-visually-hidden"> role</span>
+                      </a>
+                    </dd>
+                  </div>
+                {% endfor %}
+            </dl>
+            <p class="govuk-body">No roles selected</p>
+        
+        
+
+            <!-- dynamic content for templates -->
+
+
+
+            <!-- dynamic content for all roles -->
+
+
+        <!-- dynamic content removed roles-->
+        <section id="remove-roles">
+            <h2 class="govuk-heading-m">Roles removed</h2>
+        </section>
+        
+        <!-- end -->   
+
+        <div class="govuk-button-group">
+
+            {{ govukButton({
+                text: "Continue",
+                href: "/version-1/staff-profile"
+            }) }}
+
+            {{ govukButton({
+                text: "Change roles",
+                classes: "govuk-button--secondary"
+            }) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

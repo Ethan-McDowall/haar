@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Manage user accounts",
+      href: "#"
+    },
+    {
+      text: "Search for a DPS user",
+      href: "#"
+    },
+    {
+        text: "[User name]",
+        href: "#"
+      }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Prototypes for {{ serviceName }}
+    </h1>
+
+    {{ govukDetails({
+      summaryText: "User research and design documents",
+      text: "Links to relevant documents"
+    }) }}
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Version history</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Version</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">What's changed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="./version-1/staff-profile.html" class="govuk-link govuk-!-font-weight-bold">Version 1</a></th>
+          <td class="govuk-table__cell">        
+            {{govukTag({
+              text: "In design",
+              classes: "govuk-tag--blue"
+            })}}
+          </td>
+          <td class="govuk-table__cell">Not available yet</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+{% endblock %}
